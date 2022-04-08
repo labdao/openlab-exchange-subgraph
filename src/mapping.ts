@@ -38,6 +38,7 @@ export function handlejobClosed(event: jobClosed): void {
     job = new Job(id)
   }
   job.status = event.params._status
+  job.openlabNFTURI = event.params._openLabNFTURI
   job.save()
 }
 
