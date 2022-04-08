@@ -1,0 +1,10 @@
+type Job @entity {
+  id: ID!
+  client: Bytes!
+  provider: Bytes
+  payableToken: Bytes!
+  jobCost: BigInt!
+  jobURI: String!
+  status: Int!
+  openlabNFTURI: String
+}
