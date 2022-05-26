@@ -4,7 +4,7 @@
   "scripts": {
     "codegen": "graph codegen",
     "build": "graph build",
-    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ tohrnii/openlab-exchange-mumbai-c",
+    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ acashmoney/openlab-exchange",
     "create-local": "graph create --node http://localhost:8020/ tohrnii/openlab-exchange-mumbai-c",
     "remove-local": "graph remove --node http://localhost:8020/ tohrnii/openlab-exchange-mumbai-c",
     "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 tohrnii/openlab-exchange-mumbai-c"
