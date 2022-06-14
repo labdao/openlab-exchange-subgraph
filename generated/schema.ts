@@ -15,12 +15,6 @@ export class Job extends Entity {
   constructor(id: string) {
     super();
     this.set("id", Value.fromString(id));
-
-    this.set("client", Value.fromBytes(Bytes.empty()));
-    this.set("payableToken", Value.fromBytes(Bytes.empty()));
-    this.set("jobCost", Value.fromBigInt(BigInt.zero()));
-    this.set("jobURI", Value.fromString(""));
-    this.set("status", Value.fromI32(0));
   }
 
   save(): void {
@@ -83,13 +77,13 @@ export class Job extends Entity {
     this.set("payableToken", Value.fromBytes(value));
   }
 
-  get jobCost(): BigInt {
+  get jobCost(): BigDecimal {
     let value = this.get("jobCost");
-    return value!.toBigInt();
+    return value!.toBigDecimal();
   }
 
-  set jobCost(value: BigInt) {
-    this.set("jobCost", Value.fromBigInt(value));
+  set jobCost(value: BigDecimal) {
+    this.set("jobCost", Value.fromBigDecimal(value));
   }
 
   get jobURI(): string {

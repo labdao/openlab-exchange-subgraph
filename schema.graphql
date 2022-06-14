@@ -3,7 +3,7 @@ type Job @entity {
   client: Bytes!
   provider: Bytes
   payableToken: Bytes!
-  jobCost: BigInt!
+  jobCost: BigDecimal!
   jobURI: String!
   status: Int!
   openlabNFTURI: String

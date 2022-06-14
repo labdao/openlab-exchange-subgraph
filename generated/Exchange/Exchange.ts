@@ -229,6 +229,34 @@ export class Exchange__jobsListResult {
     map.set("value6", ethereum.Value.fromString(this.value6));
     return map;
   }
+
+  getClient(): Address {
+    return this.value0;
+  }
+
+  getProvider(): Address {
+    return this.value1;
+  }
+
+  getPayableToken(): Address {
+    return this.value2;
+  }
+
+  getJobCost(): BigInt {
+    return this.value3;
+  }
+
+  getJobURI(): string {
+    return this.value4;
+  }
+
+  getStatus(): i32 {
+    return this.value5;
+  }
+
+  getOpenLabNFTURI(): string {
+    return this.value6;
+  }
 }
 
 export class Exchange extends ethereum.SmartContract {
@@ -754,6 +782,36 @@ export class SwapCall__Outputs {
   _call: SwapCall;
 
   constructor(call: SwapCall) {
+    this._call = call;
+  }
+}
+
+export class UpdateNFTContractAddressCall extends ethereum.Call {
+  get inputs(): UpdateNFTContractAddressCall__Inputs {
+    return new UpdateNFTContractAddressCall__Inputs(this);
+  }
+
+  get outputs(): UpdateNFTContractAddressCall__Outputs {
+    return new UpdateNFTContractAddressCall__Outputs(this);
+  }
+}
+
+export class UpdateNFTContractAddressCall__Inputs {
+  _call: UpdateNFTContractAddressCall;
+
+  constructor(call: UpdateNFTContractAddressCall) {
+    this._call = call;
+  }
+
+  get _openLabNFTAddress(): Address {
+    return this._call.inputValues[0].value.toAddress();
+  }
+}
+
+export class UpdateNFTContractAddressCall__Outputs {
+  _call: UpdateNFTContractAddressCall;
+
+  constructor(call: UpdateNFTContractAddressCall) {
     this._call = call;
   }
 }
